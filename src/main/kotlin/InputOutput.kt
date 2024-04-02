@@ -1,6 +1,7 @@
 class InputOutput: IntInputOutput {
     override fun imprimir(mensaje: String,salto:Boolean){
-        println(mensaje)
+        if (salto) print(mensaje)
+        else println(mensaje)
     }
     override fun pedir(mensaje: String):String{
         println(mensaje)
