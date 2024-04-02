@@ -6,9 +6,7 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput) {
     fun faseIncremental(){
         val numero = consola.pedir("Dime el numero de palabras que tendra la frase").toInt()
         sec = lineSequence(numero)
-
         var frase = ""
-
         sec.forEach {
             frase += if (frase.isEmpty()) it else " $it"
             consola.imprimir(frase)
@@ -16,7 +14,10 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput) {
     }
 
     fun fraseFinal(){
-
+        val numero = consola.pedir("Dime el numero de palabras que tendra la frase").toInt()
+        sec = lineSequence(numero)
+        var frase = ""
+        mostarSec()
     }
 
     fun getSec()=sec.toList().joinToString(" ")
