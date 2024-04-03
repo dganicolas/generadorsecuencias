@@ -4,6 +4,6 @@ fun main() {
     val generador= GeneradorDeSecuencias(consola)
     val pedirnumero = PedirNumero()
 
-    generador.fraseFinal(consola.pedirNumero())
-    generador.faseIncremental(consola.pedirNumero())
+    generador.fraseFinal(consola.pedir("Dime un numero"))
+    generador.faseIncremental(consola.pedir("Dime un numero"))
 }
