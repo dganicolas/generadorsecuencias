@@ -12,6 +12,7 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput):IntgeneradorDeSe
             consola.imprimir(frase)
         }
     }
+
     override fun fraseFinal(numero: Int){
         sec = lineSequence(numero)
         mostarSec()
