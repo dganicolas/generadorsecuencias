@@ -9,7 +9,7 @@ class InputOutput: IntInputOutput {
         var numero:Int?
 
         do{
-            println(mensaje)
+            print(mensaje)
             numero = readln().toIntOrNull()
         }while(numero == null)
 

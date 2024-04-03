@@ -1,10 +1,10 @@
-class GeneradorDeSecuencias(private var consola:IntInputOutput) {
+class GeneradorDeSecuencias(private var consola:IntInputOutput):IntgeneradorDeSecuencias {
 
     private lateinit var sec:Sequence<String>
 
-    private fun lineSequence(limit: Int = Int.MAX_VALUE) = generateSequence { readln() }.constrainOnce().take(limit)
+     override fun lineSequence(limit: Int) = generateSequence { readln() }.constrainOnce().take(limit)
 
-    fun faseIncremental(numero: Int){
+    override fun faseIncremental(numero: Int){
         sec = lineSequence(numero)
         var frase = ""
         sec.forEach {
@@ -13,14 +13,14 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput) {
         }
     }
 
-    fun fraseFinal(numero: Int){
+    override fun fraseFinal(numero: Int){
         sec = lineSequence(numero)
         mostarSec()
     }
 
-    fun getSec()=sec.toList().joinToString(" ")
+    override fun getSec()=sec.toList().joinToString(" ")
 
-    fun mostarSec(){
+    override fun mostarSec(){
         consola.imprimir(getSec())
     }
 }
