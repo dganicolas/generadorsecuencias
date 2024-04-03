@@ -1,6 +1,7 @@
-fun main(args: Array<String>) {
+fun main() {
     val consola = InputOutput()
     val generador= GeneradorDeSecuencias(consola)
-    generador.fraseFinal()
-    generador.faseIncremental()
+    val pedirnumero = PedirNumero()
+    generador.fraseFinal(pedirnumero.pedirNumero())
+    generador.faseIncremental(pedirnumero.pedirNumero())
 }

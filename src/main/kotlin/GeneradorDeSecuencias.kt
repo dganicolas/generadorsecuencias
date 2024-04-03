@@ -3,8 +3,7 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput) {
 
     private fun lineSequence(limit: Int = Int.MAX_VALUE) = generateSequence { readln() }.constrainOnce().take(limit)
 
-    fun faseIncremental(){
-        val numero = consola.pedir("Dime el numero de palabras que tendra la frase").toInt()
+    fun faseIncremental(numero: Int){
         sec = lineSequence(numero)
         var frase = ""
         sec.forEach {
@@ -13,15 +12,12 @@ class GeneradorDeSecuencias(private var consola:IntInputOutput) {
         }
     }
 
-    fun fraseFinal(){
-        val numero = consola.pedir("Dime el numero de palabras que tendra la frase").toInt()
+    fun fraseFinal(numero: Int){
         sec = lineSequence(numero)
-        var frase = ""
         mostarSec()
     }
 
     fun getSec()=sec.toList().joinToString(" ")
-
 
     fun mostarSec(){
         consola.imprimir(getSec())
